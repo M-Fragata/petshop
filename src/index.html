@@ -57,9 +57,44 @@
         <button id="button">Novo Agendamento</button>
     </main>
 
-    <div>
-        
-    </div>
+    <dialog id="modal-container">
+        <div>
+            <h2>Agende um atendimento</h2>
+            <p>Preencha os dados do cliente para realizar o agendamento</p>
+        </div>
+
+        <form action="">
+            <div>
+                <label for="name">Nome do tutor</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="pet">Nome do pet</label>
+                <input type="text" id="pet">
+            </div>
+            <div>
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" placeholder="(00) 0 0000-0000">
+            </div>
+            <div>
+                <label for="description">Descrição do serviço</label>
+                <input type="text" id="description" height="100px">
+            </div>
+            <div>
+                <div>
+                    <label for="data">Data</label>
+                    <input type="date" id="data">
+                </div>
+                <div>
+                    <label for="hora">Hora</label>
+                    <input type="time" id="hora">
+                </div>
+            </div>
+            
+            <button>Agendar</button>
+        </form>
+
+    </dialog>
 
 </body>
 
