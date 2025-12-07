@@ -54,44 +54,47 @@
                 <p>Cortes de Unhas</p>
             </div>
         </section>
-        <button id="button">Novo Agendamento</button>
+        <button class="button-new-schedules">Novo Agendamento</button>
     </main>
 
     <dialog id="modal-container">
-        <div>
+        <div class="close-button">X</div>
+        <div class="header-form">
             <h2>Agende um atendimento</h2>
             <p>Preencha os dados do cliente para realizar o agendamento</p>
         </div>
 
         <form action="">
-            <div>
+            <div class="input-label">
                 <label for="name">Nome do tutor</label>
-                <input type="text" id="name">
+                <input type="text" id="name" class="transparent-input" required>
             </div>
-            <div>
+            <div class="input-label">
                 <label for="pet">Nome do pet</label>
-                <input type="text" id="pet">
+                <input type="text" id="pet" class="transparent-input" required>
             </div>
-            <div>
+            <div class="input-label">
                 <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" placeholder="(00) 0 0000-0000">
+                <input type="tel" id="telefone" placeholder="(00) 0 0000-0000" class="transparent-input" required>
             </div>
-            <div>
+            <div class="input-label">
                 <label for="description">Descrição do serviço</label>
-                <input type="text" id="description" height="100px">
+                <input type="text" id="description" height="100px" class="transparent-input" required>
             </div>
-            <div>
+            <div class="data-hora">
                 <div>
                     <label for="data">Data</label>
-                    <input type="date" id="data">
+                    <input type="date" id="data" class="transparent-input" required>
                 </div>
                 <div>
                     <label for="hora">Hora</label>
-                    <input type="time" id="hora">
+                    <input type="time" id="hora" class="transparent-input" required>
                 </div>
             </div>
             
-            <button>Agendar</button>
+            <div id="button-schedule-div">
+                <button type="submit" class="button-schedule">Agendar</button>
+            </div>
         </form>
 
     </dialog>

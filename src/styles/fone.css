@@ -62,7 +62,7 @@ main > section {
     }
 }
 
-#button{
+.button-new-schedules{
     margin: 10px auto;
     padding: 10px;
     border-radius: 10px;
@@ -73,7 +73,93 @@ main > section {
     max-width: 580px;
 }
 
-#button:hover{
+.button-new-schedules:hover {
     background-color: #23242cbd;
     cursor: pointer;
+}
+
+#button-schedule-div{
+    display: flex;
+    justify-content: center;
+}
+
+.button-schedule{
+    padding: 10px;
+    flex-grow: 1;
+    border-radius: 10px;
+    border: 1px solid #666666;
+    background-color: #23242c;
+    color: white;
+}
+
+.button-schedule:hover{
+    background-color: #00000025;
+    cursor: pointer;
+}
+
+.close-button{
+    cursor: pointer;
+    font-weight: bold;
+    position: fixed;
+    left: 91%;
+    top: 1;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#modal-container{
+    width: 90dvw;
+    height: 100dvh;
+    max-width: 400px;
+    background-color: #23242c;
+    padding: 10px;
+    border-radius: 10px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    h2, label{
+        color: white;
+    }
+    p{
+       color: #666666; 
+    }
+    h2,p{
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+.transparent-input{
+    background-color: transparent;
+    border: 1px solid #666666;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.input-label {
+    display: flex;
+    flex-flow: column nowrap;
+    
+    padding: 10px;
+    gap: 2px;
+}
+
+.data-hora{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.header-form{
+    margin-top: 15px;
 }
