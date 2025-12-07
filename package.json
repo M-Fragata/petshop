@@ -1,0 +1,26 @@
+{
+  "name": "petshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-Fragata/petshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M-Fragata/petshop/issues"
+  },
+  "homepage": "https://github.com/M-Fragata/petshop#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.19",
+    "mongoose": "^9.0.1"
+  }
+}
