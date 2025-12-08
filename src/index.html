@@ -7,7 +7,9 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="styles/fone.css">
-    <script src="script/script.js" defer></script>
+
+    <script src="https://unpkg.com/dayjs"></script>
+    <script type="module" src="script/script.js" defer></script>
 
 </head>
 
@@ -57,61 +59,63 @@
         <button class="button-new-schedules">Novo Agendamento</button>
     </main>
 
-    <dialog id="modal-container">
-        <div class="close-button">X</div>
-        <div class="header-form">
-            <h2>Agende um atendimento</h2>
-            <p>Preencha os dados do cliente para realizar o agendamento</p>
-        </div>
-
-        <form id="new-schedule-form">
-            <div class="input-label">
-                <label for="name">Nome do tutor</label>
-                <input type="text" name="clientName" id="name" class="transparent-input" required>
+<div id="fundoDeVidro">
+        <dialog id="modal-container">
+            <div class="close-button">X</div>
+            <div class="header-form">
+                <h2>Agende um atendimento</h2>
+                <p>Preencha os dados do cliente para realizar o agendamento</p>
             </div>
-            <div class="input-label">
-                <label for="pet">Nome do pet</label>
-                <input type="text" name="petName" id="pet" class="transparent-input" required>
-            </div>
-            <div class="input-label">
-                <label for="telefone">Telefone</label>
-                <input type="tel" name="phone" id="telefone" placeholder="(00) 0 0000-0000" class="transparent-input" required>
-            </div>
-            <div class="input-label">
-                <label for="description">Serviço</label>
-                <input type="text" name="service" id="service" height="100px" class="transparent-input" required>
-            </div>
-            <div class="data-hora">
-                <div>
-                    <label for="data">Data</label>
-                    <input type="date" name="when" id="data" class="transparent-input" required>
+    
+            <form id="new-schedule-form">
+                <div class="input-label">
+                    <label for="name">Nome do tutor</label>
+                    <input type="text" name="clientName" id="name" class="transparent-input" required>
                 </div>
-                <div>
-                    <label for="hora">Horário: </label>
-                    <select name="hour" id="schedule-hour" required>
-                        <option value="" disabled selected>Escolha o Horário</option>
-                        <option value="08:00">08:00</option>
-                        <option value="09:00">09:00</option>
-                        <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
-                        <option value="13:00">13:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="15:00">15:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="17:00">17:00</option>
-                        <option value="18:00">18:00</option>
-                        <option value="19:00">19:00</option>
-                        <option value="20:00">20:00</option>
-                    </select>
+                <div class="input-label">
+                    <label for="pet">Nome do pet</label>
+                    <input type="text" name="petName" id="pet" class="transparent-input" required>
                 </div>
-            </div>
-            
-            <div id="button-schedule-div">
-                <button type="submit" class="button-schedule">Agendar</button>
-            </div>
-        </form>
-
-    </dialog>
+                <div class="input-label">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" name="phone" id="telefone" placeholder="(00) 0 0000-0000" class="transparent-input" required>
+                </div>
+                <div class="input-label">
+                    <label for="service">Serviço</label>
+                    <input type="text" name="service" id="service" height="100px" class="transparent-input" required>
+                </div>
+                <div class="data-hora">
+                    <div>
+                        <label for="data">Data</label>
+                        <input type="date" name="when" id="data" class="transparent-input" required>
+                    </div>
+                    <div>
+                        <label for="schedule-hour">Horário: </label>
+                        <select name="hour" id="schedule-hour" required>
+                            <option value="" disabled selected>Escolha o Horário</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div id="button-schedule-div">
+                    <button type="submit" class="button-schedule">Agendar</button>
+                </div>
+            </form>
+    
+        </dialog>
+</div>
 
 </body>
 

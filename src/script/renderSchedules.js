@@ -1,9 +1,11 @@
-import dayjs from "dayjs"
+const morningSection = document.querySelector(".morning")
+const afternoonSection = document.querySelector(".afternoon")
+const nightSection = document.querySelector(".night")
 
 function clearSchedules() {
-    document.querySelector('.morning .main-schedules').innerHTML = ''
-    document.querySelector('.afternoon .main-schedules').innerHTML = ''
-    document.querySelector('.night .main-schedules').innerHTML = ''
+    morningSection.innerHTML = ''
+    afternoonSection.innerHTML = ''
+    nightSection.innerHTML = ''
 }
 
 function createScheduleItem(schedule) {
@@ -21,6 +23,7 @@ export const renderSchedules = (data, selectedDate) => {
         return
     }
 
+
     const filteredSchedules = data.filter(schedule => {
         const targetDate = dayjs(selectedDate).format("YYYY-MM-DD")
 
@@ -30,29 +33,40 @@ export const renderSchedules = (data, selectedDate) => {
     })
 
     if (filteredSchedules.length === 0) {
+        console.log(`Nenhum agendamento para ${selectedDate}`)
         return
     }
 
     filteredSchedules.forEach(schedule => {
-        const hour = dayjs(schedule.when).hour()
-        let sectionSelector = ""
 
-        if (hour >= 8 && hour <= 11) {
-            sectionSelector = ".morning .main-schedules"
-        } else if (hour >= 13 && hour <= 17) {
-            sectionSelector = ".afternoon .main-schedules"
-        } else if (hour > 17 && hour <= 20) {
-            sectionSelector = ".night .main-schedules"
-        } else {
+        const scheduleCardHTML = createScheduleItem(schedule)
+
+        const hourString = schedule.hour
+        const hour = parseInt(hourString.split(":")[0])
+
+        if(isNaN(hour)) {
+            console.error("Erro: Hour é NaN. Verifique o valor de schedule.hour no MongoDB.", schedule)
             return
         }
 
-        const section = document.querySelector(sectionSelector)
+        let sectionToRender = null
 
-        if (section) {
-            section.innerHTML += createScheduleItem(schedule)
+        if (hour >= 8 && hour <= 11) {
+            sectionToRender = morningSection
+
+        } else if (hour >= 14 && hour <= 17) {
+            sectionToRender = afternoonSection
+
+        } else if (hour > 17 && hour <= 20) {
+            sectionToRender = nightSection
+
+        } else {
+
+            return
         }
 
+        if (sectionToRender) {
+            sectionToRender.innerHTML += scheduleCardHTML
+        }
     })
-
 }

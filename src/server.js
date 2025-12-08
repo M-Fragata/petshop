@@ -5,30 +5,35 @@ import { Pet } from "./middlewares/pet-schedules.js"
 
 const port = 3333
 
+const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Max-Age': 2592000,
+    'Access-Control-Allow-Headers': '*'
+}
+
 const server = http.createServer(async (req, res) => {
 
-    res.setHeader('Access-Constrol-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-    res.setHeader('Access-Control-Allow-Headers', '*')
-
-    if( req.method === 'OPTIONS' ) {
-        return res.writeHead(204).end()
-    }
-
     const { method, url } = req
+
+    if (url === '/petSchedules' && method === 'OPTIONS') {
+        res.writeHead(204, headers)
+        res.end()
+        return
+    }
 
     if (method === "GET" && url === "/petSchedules") {
         try {
             const petSchedules = await Pet.find()
 
             return res
-                .writeHead(200, { "Content-type": "application/json" })
+                .writeHead(200, headers)
                 .end(JSON.stringify(petSchedules))
 
         } catch (error) {
             console.log(error)
             return res
-                .writeHead(400, { "Contet-type": "application/json" })
+                .writeHead(400, { "Content-type": "application/json" })
                 .end(JSON.stringify({ error: "Erro ao buscar lista de agendamentos" }))
         }
     } else if (method === "POST" && url === "/petSchedules") {
@@ -44,7 +49,7 @@ const server = http.createServer(async (req, res) => {
             const newPetSchedules = await Pet.create(body)
 
             return res
-                .writeHead(201, { "Content-type": "application/json" })
+                .writeHead(201, headers)
                 .end(JSON.stringify(newPetSchedules))
 
         } catch (error) {
@@ -89,7 +94,7 @@ const server = http.createServer(async (req, res) => {
 
             const [, , id] = url.split("/")
 
-            const putPetSchedule = await Pet.findByIdAndChange(id, body, { new: true })
+            const putPetSchedule = await Pet.findByIdAndUpdate(id, body, { new: true })
 
             if (!putPetSchedule) {
                 return res

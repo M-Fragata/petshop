@@ -108,13 +108,27 @@ main > section {
     border-radius: 10px;
 }
 
+.fundoDeVidro{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);   
+}
+
 #modal-container{
     width: 90dvw;
     height: 100dvh;
     max-width: 400px;
-    background-color: #23242c;
     padding: 10px;
     border-radius: 10px;
+    z-index: 1000;
+    background-color: #000;
 
     position: fixed;
     top: 50%;

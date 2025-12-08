@@ -16,10 +16,10 @@ export async function loadSchedules() {
 
         renderSchedules(data, selectedDate)
 
-        console.log("Agendamentos carregados:", data)
         return data
 
     } catch (error) {
+
         console.error("Falha na busca.", error)
         alert("Não foi possível carregar os dados.")
     }
@@ -54,6 +54,8 @@ export async function createSchedules() {
         if (response.status === 201) {
             alert("Agendamento criado com sucesso!")
             loadSchedules()
+
+            return true
         } else {
             const errorData = await response.json()
             throw new Error(errorData.error || "Erro desconhecido ao agendar")
