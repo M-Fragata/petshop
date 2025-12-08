@@ -1,6 +1,6 @@
-const morningSection = document.querySelector(".morning")
-const afternoonSection = document.querySelector(".afternoon")
-const nightSection = document.querySelector(".night")
+const morningSection = document.querySelector(".morning .main-schedules")
+const afternoonSection = document.querySelector(".afternoon .main-schedules")
+const nightSection = document.querySelector(".night .main-schedules")
 
 function clearSchedules() {
     morningSection.innerHTML = ''

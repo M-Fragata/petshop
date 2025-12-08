@@ -3,9 +3,11 @@ const modalContainer = document.querySelector('#modal-container')
 const closeButton = document.querySelector('.close-button')
 const form = document.querySelector("#new-schedule-form")
 const fundoDeVidro = document.querySelector("#fundoDeVidro")
-
+const inputDate = document.querySelector("#date")
 
 import { createSchedules, loadSchedules } from "./schedules.js"
+
+
 
 document.addEventListener('DOMContentLoaded', async () => {
     const dateInput = document.querySelector("#date")
@@ -15,6 +17,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         dateInput.value = today
     }
 
+    await loadSchedules()
+})
+
+inputDate.addEventListener('change', async () => {
     await loadSchedules()
 })
 
