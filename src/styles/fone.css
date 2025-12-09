@@ -8,7 +8,7 @@ body {
     background-color: #151515;
 }
 
-header{
+header {
     display: flex;
     flex-flow: column nowrap;
     width: 80dvw;
@@ -16,12 +16,14 @@ header{
     margin: 0 auto;
 }
 
-header > section{
+header>section {
     padding: 10px;
-    h1{
+
+    h1 {
         color: white;
     }
-    p{
+
+    p {
         color: #666666;
     }
 }
@@ -34,7 +36,7 @@ main {
     margin: 0 auto;
 }
 
-main > section {
+main>section {
     background-color: #23242c;
     padding: 20px;
     margin: 10px;
@@ -54,15 +56,16 @@ main > section {
     border-top: 1px solid rgba(255, 255, 255, 0.284);
 
     color: #666666;
-    p{
-        strong{
+
+    p {
+        strong {
             color: white;
             font-size: .8rem;
         }
     }
 }
 
-.button-new-schedules{
+.button-new-schedules {
     margin: 10px auto;
     padding: 10px;
     border-radius: 10px;
@@ -78,12 +81,12 @@ main > section {
     cursor: pointer;
 }
 
-#button-schedule-div{
+#button-schedule-div {
     display: flex;
     justify-content: center;
 }
 
-.button-schedule{
+.button-schedule {
     padding: 10px;
     flex-grow: 1;
     border-radius: 10px;
@@ -92,12 +95,12 @@ main > section {
     color: white;
 }
 
-.button-schedule:hover{
+.button-schedule:hover {
     background-color: #00000025;
     cursor: pointer;
 }
 
-.close-button{
+.close-button {
     cursor: pointer;
     font-weight: bold;
     position: fixed;
@@ -109,20 +112,20 @@ main > section {
     color: white;
 }
 
-.fundoDeVidro{
+.fundoDeVidro {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
     width: 100dvw;
     height: 100dvh;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);
 }
 
-#modal-container{
+#modal-container {
     width: 90dvw;
     height: 100dvh;
     max-width: 400px;
@@ -134,21 +137,25 @@ main > section {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
-    h2, label{
+    h2,
+    label {
         color: white;
     }
-    p{
-       color: #666666; 
+
+    p {
+        color: #666666;
     }
-    h2,p{
+
+    h2,
+    p {
         padding: 10px;
         text-align: center;
     }
 }
 
-.transparent-input{
+.transparent-input {
     background-color: transparent;
     border: 1px solid #666666;
     border-radius: 5px;
@@ -158,23 +165,40 @@ main > section {
 .input-label {
     display: flex;
     flex-flow: column nowrap;
-    
+
     padding: 10px;
     gap: 2px;
 }
 
-.data-hora{
+.data-hora {
     display: flex;
     justify-content: space-around;
     padding: 20px;
 }
 
-form{
+form {
     display: flex;
     flex-flow: column nowrap;
     gap: 10px;
 }
 
-.header-form{
+.header-form {
     margin-top: 15px;
+}
+
+input {
+    color: white;
+}
+
+#date {
+    background-color: #23242c;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+#schedule-hour{
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
 }

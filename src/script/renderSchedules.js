@@ -10,9 +10,8 @@ function clearSchedules() {
 
 function createScheduleItem(schedule) {
 
-    const scheduleTime = dayjs(schedule.when).format("HH:mm")
-
-    return ` <p><strong>${scheduleTime} ${schedule.petName}</strong> / ${schedule.clientName}</p> <p>${schedule.service}</p> `
+    return ` <p><strong>${schedule.hour} ${schedule.petName}</strong> / ${schedule.clientName}</p> <p>${schedule.service}</p> `
+    
 }
 
 export const renderSchedules = (data, selectedDate) => {
@@ -28,6 +27,7 @@ export const renderSchedules = (data, selectedDate) => {
         const targetDate = dayjs(selectedDate).format("YYYY-MM-DD")
 
         const scheduleDate = dayjs(schedule.when).format("YYYY-MM-DD")
+
 
         return scheduleDate === targetDate
     })

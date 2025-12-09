@@ -4,6 +4,7 @@ const closeButton = document.querySelector('.close-button')
 const form = document.querySelector("#new-schedule-form")
 const fundoDeVidro = document.querySelector("#fundoDeVidro")
 const inputDate = document.querySelector("#date")
+const inputDateSchedule = document.querySelector('#data')
 
 import { createSchedules, loadSchedules } from "./schedules.js"
 
@@ -12,7 +13,7 @@ import { createSchedules, loadSchedules } from "./schedules.js"
 document.addEventListener('DOMContentLoaded', async () => {
     const dateInput = document.querySelector("#date")
     const today = dayjs().format("YYYY-MM-DD")
-
+    inputDateSchedule.value = today
     if (dateInput) {
         dateInput.value = today
     }
