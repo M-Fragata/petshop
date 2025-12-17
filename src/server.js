@@ -3,7 +3,7 @@ import { database } from "./middlewares/database.js"
 import { Pet } from "./middlewares/pet-schedules.js"
 
 
-const port = 3333
+const port = 3000
 
 const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -119,11 +119,11 @@ const server = http.createServer(async (req, res) => {
 
 })
 
-const startServer = async () => {
-    await database()
+const startServer = () => {
+    server.listen(port, async () => {
 
-    server.listen(port, () => {
-        console.log("Server logado")
+        await database()
+        console.log("Servidor rodando")
     })
 }
 

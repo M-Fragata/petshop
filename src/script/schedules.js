@@ -1,8 +1,10 @@
 import { renderSchedules } from "./renderSchedules.js"
 
+const URL = "http://localhost:3000/petSchedules"
+
 export async function loadSchedules() {
     try {
-        const response = await fetch('http://localhost:3333/petSchedules', {
+        const response = await fetch(URL, {
             method: "GET"
         })
 
@@ -19,9 +21,7 @@ export async function loadSchedules() {
         return data
 
     } catch (error) {
-
         console.error("Falha na busca.", error)
-        alert("Não foi possível carregar os dados.")
     }
 }
 
