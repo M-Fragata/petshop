@@ -45,7 +45,7 @@ export async function createSchedules() {
     }
 
     try {
-        const response = await fetch("http://localhost:3333/petSchedules", {
+        const response = await fetch(URL, {
             method: "POST",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify(petSchedule)
